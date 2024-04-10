@@ -1,0 +1,14 @@
+set today to current date
+set time of today to 0 -- Start of today
+set endOfDay to today + (1 * days) - 1 -- End of today
+
+tell application "Mail"
+	set todayEmailsSubjects to {}
+	-- Assuming checking in the inbox. Modify if necessary to target other mailboxes.
+	set todayEmails to (every message of inbox whose date received ≥ today and date received ≤ endOfDay)
+	repeat with email in todayEmails
+		set end of todayEmailsSubjects to subject of email
+	end repeat
+end tell
+
+return todayEmailsSubjects

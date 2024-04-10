@@ -1,0 +1,17 @@
+tell application "Notes"
+	set todayDate to current date
+	set startOfDay to todayDate - (time of todayDate)
+	set endOfDay to todayDate + (1 * days - 1) - (time of todayDate)
+	
+	set modifiedNotes to {}
+	
+	repeat with aFolder in folders
+		repeat with aNote in notes of aFolder
+			if (modification date of aNote ≥ startOfDay) and (modification date of aNote ≤ endOfDay) then
+				set end of modifiedNotes to (name of aNote) & " : " & (body of aNote)
+			end if
+		end repeat
+	end repeat
+end tell
+
+return modifiedNotes

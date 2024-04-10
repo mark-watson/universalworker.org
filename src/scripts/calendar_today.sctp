@@ -1,0 +1,16 @@
+set currentDate to current date
+set time of currentDate to 0 -- Start of the day
+set endDate to currentDate + (1 * days) - 1 -- End of the day
+
+tell application "Calendar"
+	set todayEvents to {} -- Initialize an empty list for events
+	set myCalendars to calendars -- Retrieve all calendars
+	repeat with aCalendar in myCalendars
+		-- Retrieve events for today from each calendar
+		set theEvents to (every event of aCalendar whose start date is greater than currentDate and start date is less than endDate)
+		repeat with anEvent in theEvents
+			set end of todayEvents to summary of anEvent & " at " & start date of anEvent
+		end repeat
+	end repeat
+	return todayEvents -- Output the list of today's events
+end tell
