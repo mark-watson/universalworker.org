@@ -1,0 +1,30 @@
+-- Define the function to search calendar entries
+on findCalendarEntries(q, calendarName)
+	tell application "Calendar"
+		set foundEvents to {} -- Initialize an empty list for matching events
+		try
+			-- Attempt to get the specified calendar
+			set theCalendar to calendar calendarName
+			-- Get the current date range to search
+			set startDate to (current date) - (30 * days) -- Modify as needed
+			set endDate to (current date) + (30 * days) -- Modify as needed
+			
+			-- Search for events in the calendar that match the query
+			repeat with anEvent in (get events of theCalendar whose start date is greater than startDate and start date is less than endDate)
+				if summary of anEvent contains q then
+					set end of foundEvents to (summary of anEvent & " on " & start date of anEvent) as string
+				end if
+			end repeat
+		on error errorMessage
+			return "Error: " & errorMessage
+		end try
+		
+		return foundEvents
+	end tell
+end findCalendarEntries
+
+-- Example usage of the function
+set searchQuery to "Wetlands"
+set calendarToSearch to "mark.watson@gmail.com" -- Change to your actual calendar name
+set searchResults to findCalendarEntries(searchQuery, calendarToSearch)
+return searchResults
