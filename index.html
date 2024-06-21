@@ -29,8 +29,6 @@
             background: #E0F7FA; /* Light blue background */
             margin: 0 auto; /* Spacing between list items */
             padding: 5px; /* Padding inside each list item */
-            border-radius: 5px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
             text-align: center; /* Center text inside list items */
         }
         ul li a {
@@ -58,9 +56,17 @@
     <img src="docs/title.jpg" alt="Title Image" class="header-image">
     <div class="content">
         <h1>Universal Worker: a library and framework for individual AI assistants</h1>
+        <p>Code and workflow experiments by <a href="https://markwatson.com target="new">Mark Watson</a>.</p>
         <p><i>This project is a work in progress.</i></p>
         </p>Currently this project is available under the GNU AFFERO GENERAL PUBLIC LICENSE.</p>
         <h2>Technology Used for Prototyping</h2>
+        <p>The code for this project is largely framework-free, that is, we don't build with
+            abstraction rich frameworks like LangChain or LlamaIndex. Many of the ideas developed here 
+            are similar to examples in Mark's book <a href="https://leanpub.com/langchain" target="new">LangChain and LlamaIndex
+                Projects Lab Book: Hooking Large Language Models Up to the Real World</a> but ere we favor developing eveything
+                from scratch. For example, we develop vecotor data stores from scratch using NumPy, write our own prompt frameworks,
+                and write our own wrappers fro different LLMs and platform providers.
+            </p>
         <ul>
             <li>LLM models: self-hosted using <a href="https://ollama.com" target="new">Ollama</a>.</li>
             <li>Web search: using the <a href="https://brave.com/search/api/" target="new">Brave Search APIs</a>.</li>
