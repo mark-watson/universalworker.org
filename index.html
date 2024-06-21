@@ -21,10 +21,33 @@
             text-align: center; /* Center text by default */
             max-width: 1200px; /* Optional: limit max width for large screens */
         }
+        ul {
+            list-style-type: none; /* Remove default list styling */
+            padding: 0;
+        }
+        ul li {
+            background: #fff; /* White background for each list item */
+            margin: 10px 0; /* Spacing between list items */
+            padding: 10px; /* Padding inside each list item */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+            text-align: left; /* Ensure text is left-aligned */
+        }
+        ul li a {
+            color: #007BFF; /* Link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+        ul li a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
         @media (max-width: 768px) {
             .content {
                 margin: 0 5%; /* Add some margin on mobile */
                 text-align: left; /* Left justify text on mobile */
+            }
+            ul li {
+                font-size: 14px; /* Slightly smaller font size for mobile */
+                padding: 8px; /* Reduce padding on mobile */
             }
         }
     </style>
@@ -37,8 +60,8 @@
         </p>Currently this project is available under the GNU AFFERO GENERAL PUBLIC LICENSE.</p>
         <h2>Technology Used for Prototyping</h2>
         <ul>
-            <ui>LLM models: self-hosted using <a href="https://ollama.com" target="new">Ollama</a>.</ui>
-            <ui>Web search: using the <a href="https://brave.com/search/api/" target="new">Brave Search APIs</a>.</ui>
+            <li>LLM models: self-hosted using <a href="https://ollama.com" target="new">Ollama</a>.</li>
+            <li>Web search: using the <a href="https://brave.com/search/api/" target="new">Brave Search APIs</a>.</li>
         </ul>
         <h1>GitHub code repository</h1>
         <p>GitHub repository:
