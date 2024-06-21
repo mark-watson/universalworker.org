@@ -1,4 +1,4 @@
-from lib import *
+from applescript_lib import *
 
 def test(path):
     print(f"\nTesting AppleScript at {path} ")
