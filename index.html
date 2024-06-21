@@ -9,7 +9,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
             background-color: #E0F7FA; /* Very light blue */
         }
         .header-image {
@@ -18,7 +17,15 @@
         }
         .content {
             padding: 20px;
-            margin: 0 10%; /* Adds more white space on the left and right */
+            margin: 0 auto; /* Center content by default */
+            text-align: center; /* Center text by default */
+            max-width: 1200px; /* Optional: limit max width for large screens */
+        }
+        @media (max-width: 768px) {
+            .content {
+                margin: 0 5%; /* Add some margin on mobile */
+                text-align: left; /* Left justify text on mobile */
+            }
         }
     </style>
 </head>
@@ -26,6 +33,7 @@
     <img src="docs/title.jpg" alt="Title Image" class="header-image">
     <div class="content">
         <h1>This project is a work in progress.</h1>
+        <p><i>This project is a work in progress.</i></p>
         </p>Currently this project is available under the GNU AFFERO GENERAL PUBLIC LICENSE.</p>
         <h2>Technology Used for Prototyping</h2>
         <ul>
